@@ -1,13 +1,13 @@
 <?php
 
-namespace Illuminate\Pagination;
+namespace WPWhales\Pagination;
 
 use ArrayAccess;
 use Countable;
-use Illuminate\Contracts\Pagination\CursorPaginator as PaginatorContract;
-use Illuminate\Contracts\Support\Arrayable;
-use Illuminate\Contracts\Support\Jsonable;
-use Illuminate\Support\Collection;
+use WPWhales\Contracts\Pagination\CursorPaginator as PaginatorContract;
+use WPWhales\Contracts\Support\Arrayable;
+use WPWhales\Contracts\Support\Jsonable;
+use WPWhales\Support\Collection;
 use IteratorAggregate;
 use JsonSerializable;
 
@@ -25,7 +25,7 @@ class CursorPaginator extends AbstractCursorPaginator implements Arrayable, Arra
      *
      * @param  mixed  $items
      * @param  int  $perPage
-     * @param  \Illuminate\Pagination\Cursor|null  $cursor
+     * @param  \WPWhales\Pagination\Cursor|null  $cursor
      * @param  array  $options  (path, query, fragment, pageName)
      * @return void
      */
@@ -68,7 +68,7 @@ class CursorPaginator extends AbstractCursorPaginator implements Arrayable, Arra
      *
      * @param  string|null  $view
      * @param  array  $data
-     * @return \Illuminate\Contracts\Support\Htmlable
+     * @return \WPWhales\Contracts\Support\Htmlable
      */
     public function links($view = null, $data = [])
     {
@@ -80,7 +80,7 @@ class CursorPaginator extends AbstractCursorPaginator implements Arrayable, Arra
      *
      * @param  string|null  $view
      * @param  array  $data
-     * @return \Illuminate\Contracts\Support\Htmlable
+     * @return \WPWhales\Contracts\Support\Htmlable
      */
     public function render($view = null, $data = [])
     {

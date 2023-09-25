@@ -1,13 +1,13 @@
 <?php
 
-namespace Illuminate\Pagination;
+namespace WPWhales\Pagination;
 
 use ArrayAccess;
 use Countable;
-use Illuminate\Contracts\Pagination\LengthAwarePaginator as LengthAwarePaginatorContract;
-use Illuminate\Contracts\Support\Arrayable;
-use Illuminate\Contracts\Support\Jsonable;
-use Illuminate\Support\Collection;
+use WPWhales\Contracts\Pagination\LengthAwarePaginator as LengthAwarePaginatorContract;
+use WPWhales\Contracts\Support\Arrayable;
+use WPWhales\Contracts\Support\Jsonable;
+use WPWhales\Support\Collection;
 use IteratorAggregate;
 use JsonSerializable;
 
@@ -72,7 +72,7 @@ class LengthAwarePaginator extends AbstractPaginator implements Arrayable, Array
      *
      * @param  string|null  $view
      * @param  array  $data
-     * @return \Illuminate\Contracts\Support\Htmlable
+     * @return \WPWhales\Contracts\Support\Htmlable
      */
     public function links($view = null, $data = [])
     {
@@ -84,7 +84,7 @@ class LengthAwarePaginator extends AbstractPaginator implements Arrayable, Array
      *
      * @param  string|null  $view
      * @param  array  $data
-     * @return \Illuminate\Contracts\Support\Htmlable
+     * @return \WPWhales\Contracts\Support\Htmlable
      */
     public function render($view = null, $data = [])
     {
@@ -97,7 +97,7 @@ class LengthAwarePaginator extends AbstractPaginator implements Arrayable, Array
     /**
      * Get the paginator links as a collection (for JSON responses).
      *
-     * @return \Illuminate\Support\Collection
+     * @return \WPWhales\Support\Collection
      */
     public function linkCollection()
     {

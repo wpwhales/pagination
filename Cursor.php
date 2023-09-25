@@ -1,8 +1,8 @@
 <?php
 
-namespace Illuminate\Pagination;
+namespace WPWhales\Pagination;
 
-use Illuminate\Contracts\Support\Arrayable;
+use WPWhales\Contracts\Support\Arrayable;
 use UnexpectedValueException;
 
 class Cursor implements Arrayable

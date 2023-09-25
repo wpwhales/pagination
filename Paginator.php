@@ -1,13 +1,13 @@
 <?php
 
-namespace Illuminate\Pagination;
+namespace WPWhales\Pagination;
 
 use ArrayAccess;
 use Countable;
-use Illuminate\Contracts\Pagination\Paginator as PaginatorContract;
-use Illuminate\Contracts\Support\Arrayable;
-use Illuminate\Contracts\Support\Jsonable;
-use Illuminate\Support\Collection;
+use WPWhales\Contracts\Pagination\Paginator as PaginatorContract;
+use WPWhales\Contracts\Support\Arrayable;
+use WPWhales\Contracts\Support\Jsonable;
+use WPWhales\Support\Collection;
 use IteratorAggregate;
 use JsonSerializable;
 
@@ -101,7 +101,7 @@ class Paginator extends AbstractPaginator implements Arrayable, ArrayAccess, Cou
      *
      * @param  string|null  $view
      * @param  array  $data
-     * @return \Illuminate\Contracts\Support\Htmlable
+     * @return \WPWhales\Contracts\Support\Htmlable
      */
     public function render($view = null, $data = [])
     {

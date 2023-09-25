@@ -1,18 +1,18 @@
 <?php
 
-namespace Illuminate\Pagination;
+namespace WPWhales\Pagination;
 
 use Closure;
-use Illuminate\Contracts\Support\Htmlable;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Traits\ForwardsCalls;
-use Illuminate\Support\Traits\Tappable;
+use WPWhales\Contracts\Support\Htmlable;
+use WPWhales\Support\Arr;
+use WPWhales\Support\Collection;
+use WPWhales\Support\Traits\ForwardsCalls;
+use WPWhales\Support\Traits\Tappable;
 use Stringable;
 use Traversable;
 
 /**
- * @mixin \Illuminate\Support\Collection
+ * @mixin \WPWhales\Support\Collection
  */
 abstract class AbstractPaginator implements Htmlable, Stringable
 {
@@ -21,7 +21,7 @@ abstract class AbstractPaginator implements Htmlable, Stringable
     /**
      * All of the items being paginated.
      *
-     * @var \Illuminate\Support\Collection
+     * @var \WPWhales\Support\Collection
      */
     protected $items;
 
@@ -552,7 +552,7 @@ abstract class AbstractPaginator implements Htmlable, Stringable
     /**
      * Get an instance of the view factory from the resolver.
      *
-     * @return \Illuminate\Contracts\View\Factory
+     * @return \WPWhales\Contracts\View\Factory
      */
     public static function viewFactory()
     {
@@ -689,7 +689,7 @@ abstract class AbstractPaginator implements Htmlable, Stringable
     /**
      * Get the paginator's underlying collection.
      *
-     * @return \Illuminate\Support\Collection
+     * @return \WPWhales\Support\Collection
      */
     public function getCollection()
     {
@@ -699,7 +699,7 @@ abstract class AbstractPaginator implements Htmlable, Stringable
     /**
      * Set the paginator's underlying collection.
      *
-     * @param  \Illuminate\Support\Collection  $collection
+     * @param  \WPWhales\Support\Collection  $collection
      * @return $this
      */
     public function setCollection(Collection $collection)

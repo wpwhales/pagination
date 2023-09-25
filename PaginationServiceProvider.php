@@ -1,8 +1,8 @@
 <?php
 
-namespace Illuminate\Pagination;
+namespace WPWhales\Pagination;
 
-use Illuminate\Support\ServiceProvider;
+use WPWhales\Support\ServiceProvider;
 
 class PaginationServiceProvider extends ServiceProvider
 {

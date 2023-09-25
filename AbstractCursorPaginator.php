@@ -1,24 +1,24 @@
 <?php
 
-namespace Illuminate\Pagination;
+namespace WPWhales\Pagination;
 
 use ArrayAccess;
 use Closure;
 use Exception;
-use Illuminate\Contracts\Support\Htmlable;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\Pivot;
-use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Support\Arr;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Str;
-use Illuminate\Support\Traits\ForwardsCalls;
-use Illuminate\Support\Traits\Tappable;
+use WPWhales\Contracts\Support\Htmlable;
+use WPWhales\Database\Eloquent\Model;
+use WPWhales\Database\Eloquent\Relations\Pivot;
+use WPWhales\Http\Resources\Json\JsonResource;
+use WPWhales\Support\Arr;
+use WPWhales\Support\Collection;
+use WPWhales\Support\Str;
+use WPWhales\Support\Traits\ForwardsCalls;
+use WPWhales\Support\Traits\Tappable;
 use Stringable;
 use Traversable;
 
 /**
- * @mixin \Illuminate\Support\Collection
+ * @mixin \WPWhales\Support\Collection
  */
 abstract class AbstractCursorPaginator implements Htmlable, Stringable
 {
@@ -27,7 +27,7 @@ abstract class AbstractCursorPaginator implements Htmlable, Stringable
     /**
      * All of the items being paginated.
      *
-     * @var \Illuminate\Support\Collection
+     * @var \WPWhales\Support\Collection
      */
     protected $items;
 
@@ -69,7 +69,7 @@ abstract class AbstractCursorPaginator implements Htmlable, Stringable
     /**
      * The current cursor.
      *
-     * @var \Illuminate\Pagination\Cursor|null
+     * @var \WPWhales\Pagination\Cursor|null
      */
     protected $cursor;
 
@@ -97,7 +97,7 @@ abstract class AbstractCursorPaginator implements Htmlable, Stringable
     /**
      * Get the URL for a given cursor.
      *
-     * @param  \Illuminate\Pagination\Cursor|null  $cursor
+     * @param  \WPWhales\Pagination\Cursor|null  $cursor
      * @return string
      */
     public function url($cursor)
@@ -148,7 +148,7 @@ abstract class AbstractCursorPaginator implements Htmlable, Stringable
     /**
      * Get the "cursor" that points to the previous set of items.
      *
-     * @return \Illuminate\Pagination\Cursor|null
+     * @return \WPWhales\Pagination\Cursor|null
      */
     public function previousCursor()
     {
@@ -167,7 +167,7 @@ abstract class AbstractCursorPaginator implements Htmlable, Stringable
     /**
      * Get the "cursor" that points to the next set of items.
      *
-     * @return \Illuminate\Pagination\Cursor|null
+     * @return \WPWhales\Pagination\Cursor|null
      */
     public function nextCursor()
     {
@@ -188,7 +188,7 @@ abstract class AbstractCursorPaginator implements Htmlable, Stringable
      *
      * @param  \ArrayAccess|\stdClass  $item
      * @param  bool  $isNext
-     * @return \Illuminate\Pagination\Cursor
+     * @return \WPWhales\Pagination\Cursor
      */
     public function getCursorForItem($item, $isNext = true)
     {
@@ -420,7 +420,7 @@ abstract class AbstractCursorPaginator implements Htmlable, Stringable
     /**
      * Get the current cursor being paginated.
      *
-     * @return \Illuminate\Pagination\Cursor|null
+     * @return \WPWhales\Pagination\Cursor|null
      */
     public function cursor()
     {
@@ -488,7 +488,7 @@ abstract class AbstractCursorPaginator implements Htmlable, Stringable
      * Resolve the current cursor or return the default value.
      *
      * @param  string  $cursorName
-     * @return \Illuminate\Pagination\Cursor|null
+     * @return \WPWhales\Pagination\Cursor|null
      */
     public static function resolveCurrentCursor($cursorName = 'cursor', $default = null)
     {
@@ -513,7 +513,7 @@ abstract class AbstractCursorPaginator implements Htmlable, Stringable
     /**
      * Get an instance of the view factory from the resolver.
      *
-     * @return \Illuminate\Contracts\View\Factory
+     * @return \WPWhales\Contracts\View\Factory
      */
     public static function viewFactory()
     {
@@ -563,7 +563,7 @@ abstract class AbstractCursorPaginator implements Htmlable, Stringable
     /**
      * Get the paginator's underlying collection.
      *
-     * @return \Illuminate\Support\Collection
+     * @return \WPWhales\Support\Collection
      */
     public function getCollection()
     {
@@ -573,7 +573,7 @@ abstract class AbstractCursorPaginator implements Htmlable, Stringable
     /**
      * Set the paginator's underlying collection.
      *
-     * @param  \Illuminate\Support\Collection  $collection
+     * @param  \WPWhales\Support\Collection  $collection
      * @return $this
      */
     public function setCollection(Collection $collection)
